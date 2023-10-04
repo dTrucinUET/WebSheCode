@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>HANDS2U</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+   <header class="header">
+
+      <section class="flex">
+
+         <a href="home.html" class="logo">HANDS2U</a>
+
+         <form action="search.html" method="post" class="search-form">
+            <input type="text" name="search_box" required placeholder="Tìm video " maxlength="100">
+            <button type="submit" class="fas fa-search"></button>
+         </form>
+
+         <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="search-btn" class="fas fa-search"></div>
+            <div id="user-btn" class="fas fa-user"></div>
+            <div id="toggle-btn" class="fas fa-sun"></div>
+         </div>
+
+         <div class="profile">
+            <img src="images/meo_1.jpg" class="image" alt="">
+            <h3 class="name">Chi</h3>
+            <p class="role">Học sinh</p>
+            <a href="profile.html" class="btn">Xem thông tin</a>
+            <div class="flex-btn">
+               <a href="login.html" class="option-btn">Đăng nhập</a>
+               <a href="register.html" class="option-btn">Đăng ký</a>
+            </div>
+         </div>
+
+      </section>
+
+   </header>
+
+   <div class="side-bar">
+
+      <div id="close-btn">
+         <i class="fas fa-times"></i>
+      </div>
+
+      <div class="profile">
+         <img src="images/meo_1.jpg" class="image" alt="">
+         <h3 class="name">Chi</h3>
+         <p class="role">Học sinh</p>
+         <a href="profile.html" class="btn">Xem thông tin</a>
+      </div>
+
+      <nav class="navbar">
+         <a href="home.html"><i class="fas fa-home"></i><span>Trang chủ</span></a>
+         <a href="about.html"><i class="fas fa-question"></i><span>Về chúng tôi</span></a>
+         <a href="courses.html"><i class="fas fa-graduation-cap"></i><span>Video</span></a>
+         <a href="test.html"><i class="fas fa-chalkboard-user"></i><span>Kiểm tra</span></a>
+      </nav>
+
+   </div>
+
+
+
+   <section class="watch-video">
+
+      <div class="video-container">
+         <div class="video">
+            <video src="images/Cộng đồng khiếm thính - Ký hiệu bảng chữ cái Việt Nam.mp4" controls poster="images/Thumb1.jpg" id="video"></video>
+         </div>
+         <h3 class="title">Bảng chữ cái</h3>
+         <div class="info">
+            <p class="date"><i class="fas fa-calendar"></i><span>22-10-2022</span></p>
+            <p class="date"><i class="fas fa-heart"></i><span>44 lượt thích</span></p>
+         </div>
+         <div class="tutor">
+            <img src="images/pic-2.jpg" alt="">
+         </div>
+         <form action="" method="post" class="flex">
+            <a href="playlist.html" class="inline-btn">Xem video khác</a>
+            <button><i class="far fa-heart"></i><span>thích</span></button>
+         </form>
+         <title>Facebook Comment</title>
+         <title>Facebook Comment</title>
+         <script>
+            function addComment() {
+               var author = document.getElementById('author').value;
+               var content = document.getElementById('content').value;
+
+               if (author && content) {
+                  var commentSection = document.getElementById('comment-section');
+
+                  var comment = document.createElement('div');
+                  comment.className = 'comment';
+
+                  var authorElement = document.createElement('span');
+                  authorElement.className = 'author';
+                  authorElement.textContent = author;
+
+                  var contentElement = document.createElement('div');
+                  contentElement.className = 'content';
+                  contentElement.textContent = content;
+
+                  comment.appendChild(authorElement);
+                  comment.appendChild(contentElement);
+
+                  commentSection.appendChild(comment);
+
+                  document.getElementById('author').value = '';
+                  document.getElementById('content').value = '';
+               }
+            }
+         </script>
+
+         </style>
+   </section>
+
+   <section class="comments">
+
+      <h1 class="heading">1 bình luận</h1>
+   
+      <form action="" class="add-comment">
+         <h3>thêm bình luận</h3>
+         <textarea name="comment_box" placeholder="viết bình luận" required maxlength="1000" cols="30" rows="10"></textarea>
+         <input type="submit" value="add comment" class="inline-btn" name="add_comment">
+      </form>
+   
+      <h1 class="heading">Bình luận</h1>
+   
+      <div class="box-container">
+   
+         <div class="box">
+            <div class="user">
+               <img src="images/pic-1.jpg" alt="">
+               <div>
+                  <h3>Trúc Đặng</h3>
+                  <span>22-10-2022</span>
+               </div>
+            </div>xinh đẹp tuyệt vời, xin cảm ơn</div>
+            <form action="" class="flex-btn">
+               <input type="submit" value="edit comment" name="edit_comment" class="inline-option-btn">
+               <input type="submit" value="delete comment" name="delete_comment" class="inline-delete-btn">
+            </form>
+   
+   </section>
+
+   <script src="js/script.js"></script>
+
+</body>
+
+</html>

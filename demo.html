@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Facebook Comment</title>
+  <style>
+    .comment-section {
+      margin-top: 20px;
+    }
+    .comment {
+      margin-bottom: 10px;
+    }
+    .comment .author {
+      font-weight: bold;
+    }
+    .comment .content {
+      margin-top: 5px;
+    }
+    .comment-form textarea {
+      width: 100%;
+      height: 80px;
+      margin-bottom: 10px;
+    }
+    .comment-form input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function addComment() {
+      var author = document.getElementById('author').value;
+      var content = document.getElementById('content').value;
+      
+      if (author && content) {
+        var commentSection = document.getElementById('comment-section');
+        
+        var comment = document.createElement('div');
+        comment.className = 'comment';
+        
+        var authorElement = document.createElement('span');
+        authorElement.className = 'author';
+        authorElement.textContent = author;
+        
+        var contentElement = document.createElement('div');
+        contentElement.className = 'content';
+        contentElement.textContent = content;
+        
+        comment.appendChild(authorElement);
+        comment.appendChild(contentElement);
+        
+        commentSection.appendChild(comment);
+        
+        document.getElementById('author').value = '';
+        document.getElementById('content').value = '';
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="comment-section" class="comment-section">
+    <div class="comment">
+      <span class="author">John Doe</span>
+      <div class="content">This is the first comment.</div>
+    </div>
+    <div class="comment">
+      <span class="author">Jane Smith</span>
+      <div class="content">This is another comment.</div>
+    </div>
+  </div>
+
+  <div class="comment-form">
+    <textarea id="author" placeholder="Your name"></textarea>
+    <textarea id="content" placeholder="Your comment"></textarea>
+    <input type="submit" value="Add Comment" onclick="addComment()">
+  </div>
+</body>
+</html>
